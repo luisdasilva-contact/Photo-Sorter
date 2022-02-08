@@ -32,5 +32,7 @@ When complete, your manifest should be the following (timeZone may be different 
 ```
 
 4.  Set up Tanaikech's GPhotoApp library. Instructions and code available here: https://github.com/tanaikech/GPhotoApp
+
+NOTE: Recent changes to Google Workplace prevent "Internal" use of Google Cloud projects. This means that you will get a security warning upon running this script. Note that this program only reads the content of your library, and does not edit it in any way.
 5. Copy and paste the .gs file in this repository into the script editor. Name the file whatever you would like. Click Save or hit CMD + S/CTRL + S upon completion. When ready, refresh the spreadsheet window. Your Apps Script window will automatically close. When the spreadsheet window has refreshed, you will now have a new menu tab for this program. 
 6. Enjoy! Please note that the active sheet is used for the program's writing functions.
