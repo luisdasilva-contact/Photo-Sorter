@@ -1,5 +1,5 @@
 # Photo-Filer
-Repository for Photo Filer, a program written in Google Apps Script to check a user's Google Photos library for items that either have no associated album or are in more than one album.
+Repository for Photo Filer, a program written in Google Apps Script to check a user's Google Photos library for items that either have no associated album or are in more than one album. Some of us like having a place for everything and everything in its place!
 
 ### Credit Where Credit is Due
 This project relies heavily upon tanaikech's GPhotoApp library, available for viewing here: https://github.com/tanaikech/GPhotoApp
