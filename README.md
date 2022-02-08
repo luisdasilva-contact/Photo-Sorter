@@ -10,12 +10,15 @@ Many thanks to them for their awesome work!
 2. Click Project Settings (gear on lefthand side), check "Show "appscript.json" manifest in file editor".
 3. Return to Editor (<> shape on lefthand side). Append the following to your manifest:
 
+```
 "oauthScopes": [
     "https://www.googleapis.com/auth/spreadsheets"
   ]
-  
+```
+
 When complete, your manifest should be the following (timeZone may be different for your location):
 
+```
 {
   "timeZone": "America/New_York",
   "dependencies": {
@@ -23,6 +26,7 @@ When complete, your manifest should be the following (timeZone may be different 
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8"
 }
+```
 
 4.  Set up Tanaikech's GPhotoApp library. Instructions and code available here: https://github.com/tanaikech/GPhotoApp
 5. Copy and paste the .gs file in this repository into the script editor. Name the file whatever you would like. Click Save or hit CMD + S/CTRL + S upon completion. When ready, refresh the spreadsheet window. Your Apps Script window will automatically close. When the spreadsheet window has refreshed, you will now have a new menu tab for this program. 
