@@ -24,7 +24,10 @@ When complete, your manifest should be the following (timeZone may be different 
   "dependencies": {
   },
   "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8"
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets"
+  ]
 }
 ```
 
