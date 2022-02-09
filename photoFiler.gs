@@ -179,22 +179,24 @@ function checkLibraryForDuplicates(){
   
   for (let i in libraryItems){
     let mediaItemId = libraryItems[i].mediaItem.id;
-    dupeIDCheck.push(mediaItemId);
-    dupeIDCheckCorrespondingItem.push(libraryItems[i]);
     
-    // checking if i > 0 to prevent dupe check from catching the first item entered
-    if ((i > 0) && (dupeIDCheck.includes(mediaItemId))){
-      confirmedDupes.push(dupeIDCheckCorrespondingItem[i]) 
-      
-      let ToPush = libraryItems.find(obj => {
-        return obj.mediaItem.id === mediaItemId;
-      });
+    if (dupeIDCheck.includes(mediaItemId)){
+      let matchingID = dupeIDCheck.indexOf(mediaItemId)
+      let correspondingItem = dupeIDCheckCorrespondingItem[matchingID];
 
+      if (!confirmedDupes.some(e => e.mediaItem.productUrl === correspondingItem.mediaItem.productUrl)){
+        confirmedDupes.push(correspondingItem);  
+      };  
+      
+      let ToPush = libraryItems[i]
       // checking productUrl to ensure the same item isn't written twice
       if (!confirmedDupes.some(e => e.mediaItem.productUrl === ToPush.mediaItem.productUrl)){
         confirmedDupes.push(ToPush);  
       };      
     };
+    
+    dupeIDCheck.push(mediaItemId);
+    dupeIDCheckCorrespondingItem.push(libraryItems[i]);
   };
 
   let arrayToWrite = [];
