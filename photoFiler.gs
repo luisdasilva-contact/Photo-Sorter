@@ -77,7 +77,7 @@ function checkForNotInAlbum(){
       
       for (let j = innerIteration; j < innerIterCap; j++ ){
         arrayForBatchCall.push(uniqueToAllMediaItemsIDs[j]);
-      }
+      };
 
       mediaNotInAlbum.push(PhotoApp.getMediaItems({mediaItemIds: arrayForBatchCall}));
     } else {   
@@ -85,7 +85,8 @@ function checkForNotInAlbum(){
         arrayForBatchCall.push(uniqueToAllMediaItemsIDs[j]);
       }
 
-      mediaNotInAlbum.push(PhotoApp.getMediaItems({mediaItemIds: arrayForBatchCall}));
+      let setFromBatchArray = [...new Set(arrayForBatchCall)];
+      mediaNotInAlbum.push(PhotoApp.getMediaItems({mediaItemIds: setFromBatchArray}));
 
       innerIteration += batchRunCap;
       innerIterCap += batchRunCap;    
