@@ -32,7 +32,7 @@ const UIObj = new (function() {
  * Displays the program's 'About' text in the Google Sheets window.
  */ 
 function displayAboutText(){
-  let aboutText = "Code written by Luis DaSilva in 2022. See my website at www.luisdasilva.net for more content!" +
+  let aboutText = "Code written by Luis DaSilva in 2022. See my website at www.luisdasilva.net for more content! " +
     "More also available on my Github at https://github.com/luisdasilva-contact."
   UIObj.displayAlert(aboutText);
 };
