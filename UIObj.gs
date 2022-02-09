@@ -23,7 +23,7 @@ const UIObj = new (function() {
    * Displays an alert in the Google Sheets window.
    * @param {string} message Text to display in alert window. 
    */ 
-  const displayAlert = (message) => {
+  this.displayAlert = (message) => {
     _Ui.alert(message);
   };  
 })();
