@@ -50,7 +50,9 @@ function write2DArrayToSheet(itemArray, boldFirstLine = true, startingColumnNo =
 function checkForNotInAlbum(){
   let mediaNotInAlbum = [];
   const allMediaItems = Array.from(PhotoApp.getMediaItemList());
-  const mediaItemsInAlbums = getAllMediaInAlbums();
+  const albumList = Array.from(PhotoApp.getAlbumList({excludeNonAppCreatedData: false}));
+  const allItems = albumList.map(album => Array.from(PhotoApp.searchMediaItems({"albumId": album.id})));
+  let mediaItemsInAlbums = allItems.flat();
 
   if (mediaItemsInAlbums.length === 0){
     return [];
@@ -103,17 +105,6 @@ function checkForNotInAlbum(){
   };
 
   return isolatedMediaItems;
-};
-
-/**
- * Retrieves all mediaItems that are in at least 1 album.
- * @return {Array<mediaItem>} mediaItems in at least 1 album.
- */
-function getAllMediaInAlbums(){
-  const albumList = Array.from(PhotoApp.getAlbumList({excludeNonAppCreatedData: false}));
-  const albumListCallRaw = Array.from(albumList.map(album => PhotoApp.searchMediaItems({"albumId": album.id}).next().value))
-  const mediaItemsInAlbum = albumListCallRaw.filter(album => album !==undefined)
-  return mediaItemsInAlbum;
 };
 
 /**
