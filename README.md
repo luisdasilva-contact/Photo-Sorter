@@ -7,7 +7,7 @@ Many thanks to them for their awesome work!
 
 ##### Instructions:
 1. Create a new Google Sheets file. Go to Extensions --> Apps Script.
-2. Click Project Settings (gear on lefthand side), check "Show "appscript.json" manifest in file editor".
+2. Click Project Settings (gear on lefthand side), and check "Show "appscript.json" manifest in file editor".
 3. Return to Editor (<> shape on lefthand side). Append the following to your manifest in appsscript.json:
 
 ```
