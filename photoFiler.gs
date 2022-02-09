@@ -149,7 +149,8 @@ function writeIsolatedMediaToSheet(){
   const SHEET_HEADER = ["File Name", "Product URL"];
 
   if (isolatedMedia.length === 0){
-    UIClass.displayAlert("None of your library items are in a folder.");
+    let UIFunctions = new UIClass;
+    UIFunctions.displayAlert("None of your library items are in a folder.");
     return;
   };
 
