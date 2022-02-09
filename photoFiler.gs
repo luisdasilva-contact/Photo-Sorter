@@ -48,6 +48,13 @@ function write2DArrayToSheet(itemArray, boldFirstLine = true, startingColumnNo =
  */
 function checkForNotInAlbum(){
   let mediaNotInAlbum = [];
+   
+  try{
+    const allMediaItems = Array.from(PhotoApp.getMediaItemList());
+  } catch(e){
+      return [e];
+  };
+   
   const allMediaItems = Array.from(PhotoApp.getMediaItemList());
   const albumList = Array.from(PhotoApp.getAlbumList({excludeNonAppCreatedData: false}));
   const allItems = albumList.map(album => Array.from(PhotoApp.searchMediaItems({"albumId": album.id})));
@@ -142,6 +149,9 @@ function writeIsolatedMediaToSheet(){
   if (isolatedMedia.length === 0){
     UIObj.displayAlert("None of your library items are in a folder.");
     return;
+  } else if ((isolatedMedia.length === 1) && (isolatedMedia[0] instanceof TypeError)){
+      UIObj.displayAlert("Error in API iteration. Please check that your library contains items.");
+      return;
   };
 
   let arrayToWrite = [];
