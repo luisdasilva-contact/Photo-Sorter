@@ -5,8 +5,7 @@
  * @param {event} e Event object containing context on the program's opening.
  */
 function onOpen(e){  
-  let UIFunctions = new UIClass;
-  UIFunctions.intializeMenu();
+  UIObj.intializeMenu();
 };
 
 /**
@@ -138,11 +137,10 @@ function getAllMediaInAlbumsIncAlbumInfo(){
  */
 function writeIsolatedMediaToSheet(){
   const isolatedMedia = checkForNotInAlbum();
-  const SHEET_HEADER = ["File Name", "Product URL"];
+  const SHEET_HEADER = ["File Name", "Product URL"];  
 
   if (isolatedMedia.length === 0){
-    let UIFunctions = new UIClass;
-    UIFunctions.displayAlert("None of your library items are in a folder.");
+    UIObj.displayAlert("None of your library items are in a folder.");
     return;
   };
 
