@@ -5,7 +5,7 @@
  * @param {event} e Event object containing context on the program's opening.
  */
 function onOpen(e){  
-  const UIFunctions = new UIClass;
+  let UIFunctions = new UIClass;
   UIFunctions.intializeMenu();
 };
 
