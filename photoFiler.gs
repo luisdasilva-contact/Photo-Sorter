@@ -189,7 +189,7 @@ function checkLibraryForDuplicates(){
     dupeIDCheckCorrespondingItem.push(libraryItems[i]);
   };
    
-  if (confirmedDupes.length == 0){
+  if (confirmedDupes.length === 0){
     UIObj.displayAlert("No duplicates found.");
     return;
   }; 
