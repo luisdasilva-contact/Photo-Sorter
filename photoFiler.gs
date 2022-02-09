@@ -188,6 +188,11 @@ function checkLibraryForDuplicates(){
     dupeIDCheck.push(mediaItemId);
     dupeIDCheckCorrespondingItem.push(libraryItems[i]);
   };
+   
+  if (confirmedDupes.length == 0){
+    UIObj.displayAlert("No duplicates found.");
+    return;
+  }; 
 
   let arrayToWrite = [];
 
