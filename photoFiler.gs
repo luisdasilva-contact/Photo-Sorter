@@ -147,7 +147,7 @@ function writeIsolatedMediaToSheet(){
   const SHEET_HEADER = ["File Name", "Product URL"];  
 
   if (isolatedMedia.length === 0){
-    UIObj.displayAlert("None of your library items are in a folder.");
+    UIObj.displayAlert("No items returned. Please verify that there are isolated items in your library.");
     return;
   } else if ((isolatedMedia.length === 1) && (isolatedMedia[0] instanceof TypeError)){
       UIObj.displayAlert("Error in API iteration. Please check that your library contains items.");
