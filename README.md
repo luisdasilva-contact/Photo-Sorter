@@ -54,9 +54,9 @@ this.getAlbumList = function* (opts) {
     });
     for (const page of pages) {
       try {
-      for (const album of page.albums) {
-        yield album;
-      }
+        for (const album of page.albums) {
+          yield album;
+        }
       } catch(e){
         continue;
       }
