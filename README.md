@@ -39,3 +39,29 @@ NOTE: Recent changes to Google Workplace prevent "Internal" use of Google Cloud 
 
 5. Copy and paste the .gs files in this repository into the script editor. Name the files whatever you would like. Click Save or hit CMD + S/CTRL + S upon completion. When ready, refresh the spreadsheet window. Your Apps Script window will automatically close. When the spreadsheet window has refreshed, you will now have a new menu tab for this program. 
 6. Enjoy! Please note that the active sheet is used for the program's writing functions.
+
+NOTE: If you encounter an error stating that "TypeError: page.albums is not iterable", encase the album loop in PhotoApp.getAlbumList in a try/catch block, like so: 
+
+```
+this.getAlbumList = function* (opts) {
+    const pages = _paginatedApiCall({
+      path: "albums",
+      params: {
+        fields: '*',
+        pageSize: 50,
+        excludeNonAppCreatedData: opts.excludeNonAppCreatedData
+      }
+    });
+    for (const page of pages) {
+      try {
+      for (const album of page.albums) {
+        yield album;
+      }
+      } catch(e){
+        continue;
+      }
+    }
+  };
+```
+
+This will allow the program to continue as expected, and the program's functions will successfully be carried out. This error may have been caused by a change in Google's API.
