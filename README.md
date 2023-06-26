@@ -1,7 +1,7 @@
-# Photo-Filer
-Repository for Photo Filer, a program written in Google Apps Script to check a user's Google Photos library for items that either have no associated album or are in more than one album. Some of us like having a place for everything and everything in its place!
+# Photo-Sorter
+Repository for Photo Sorter, a program written in Google Apps Script to check a user's Google Photos library for items that either have no associated album or are in more than one album. Some of us like having a place for everything and everything in its place!
 
-![Artwork for Photo Filer](https://cdnb.artstation.com/p/assets/images/images/046/204/317/medium/luis-dasilva-wartboard-1cleanerfinal.jpg?1644530198)
+![Artwork for Photo Sorter](https://cdnb.artstation.com/p/assets/images/images/046/204/317/medium/luis-dasilva-wartboard-1cleanerfinal.jpg?1644530198)
 
 ### Credit Where Credit is Due
 This project relies heavily upon tanaikech's GPhotoApp library, available for viewing here: https://github.com/tanaikech/GPhotoApp
