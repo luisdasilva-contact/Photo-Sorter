@@ -11,7 +11,7 @@ const UIObj = new (function() {
     program.
    */ 
   this.intializeMenu = () => {
-    _Ui.createMenu('Photo Filer')        
+    _Ui.createMenu('Photo Sorter')        
        .addItem('Write Isolated Media to Sheet', 'writeIsolatedMediaToSheet')
        .addItem('Check Library for Duplicates', 'checkLibraryForDuplicates')
        .addSeparator()
